@@ -1,0 +1,50 @@
+{
+  "dataset_id": "synthetic-support-rag-v1",
+  "model_id": "handwritten-responses-not-a-model",
+  "examples": [
+    {
+      "id": "case-1",
+      "question": "What is the status of account ACCT-001928?",
+      "context": "Account ACCT-001928 is active.",
+      "response": "{\"account_id\": \"ACCT-001928\", \"answer\": \"The account is active.\"}",
+      "expected_account_id": "ACCT-001928",
+      "relevant_context_ids": ["account-1928"],
+      "retrieved_context_ids": ["account-1928", "unrelated-policy"],
+      "human_faithful": true,
+      "judge_faithful": true
+    },
+    {
+      "id": "case-2",
+      "question": "What is the status of account ACCT-001928?",
+      "context": "Account ACCT-001928 is active.",
+      "response": "{\"account_id\": \"ACCT-001982\", \"answer\": \"The account is active.\"}",
+      "expected_account_id": "ACCT-001928",
+      "relevant_context_ids": ["account-1928"],
+      "retrieved_context_ids": ["account-1928"],
+      "human_faithful": false,
+      "judge_faithful": false
+    },
+    {
+      "id": "case-3",
+      "question": "When does the support plan expire?",
+      "context": "The support plan expires on 30 June.",
+      "response": "{\"account_id\": \"ACCT-002000\", \"answer\": \"The plan expires on 31 July.\"}",
+      "expected_account_id": "ACCT-002000",
+      "relevant_context_ids": ["plan-expiry", "plan-terms"],
+      "retrieved_context_ids": ["plan-expiry"],
+      "human_faithful": false,
+      "judge_faithful": true
+    },
+    {
+      "id": "case-4",
+      "question": "How can the customer contact support?",
+      "context": "The customer can contact support by email.",
+      "response": "{\"account_id\": \"ACCT-003000\", \"answer\": 42}",
+      "expected_account_id": "ACCT-003000",
+      "relevant_context_ids": ["contact-method"],
+      "retrieved_context_ids": ["contact-method"],
+      "human_faithful": false,
+      "judge_faithful": false
+    }
+  ]
+}

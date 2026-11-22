@@ -1,0 +1,66 @@
+{
+  "task": "synthetic_rag_evaluation",
+  "model_id": "handwritten-responses-not-a-model",
+  "dataset_id": "synthetic-support-rag-v1",
+  "created_at_utc": "2026-11-21T17:19:45.278296+00:00",
+  "sample_count": 4,
+  "metrics": {
+    "schema_valid_rate": 0.75,
+    "account_id_exact_rate": 0.75,
+    "retrieval_micro_precision": 0.8,
+    "retrieval_micro_recall": 0.8,
+    "judge_human_agreement": 0.75
+  },
+  "examples": [
+    {
+      "id": "case-1",
+      "schema_valid": true,
+      "account_id_exact": true,
+      "relevant_retrieved": 1,
+      "retrieved_count": 2,
+      "relevant_count": 1,
+      "human_faithful": true,
+      "judge_faithful": true,
+      "judge_agrees": true
+    },
+    {
+      "id": "case-2",
+      "schema_valid": true,
+      "account_id_exact": false,
+      "relevant_retrieved": 1,
+      "retrieved_count": 1,
+      "relevant_count": 1,
+      "human_faithful": false,
+      "judge_faithful": false,
+      "judge_agrees": true
+    },
+    {
+      "id": "case-3",
+      "schema_valid": true,
+      "account_id_exact": true,
+      "relevant_retrieved": 1,
+      "retrieved_count": 1,
+      "relevant_count": 2,
+      "human_faithful": false,
+      "judge_faithful": true,
+      "judge_agrees": false
+    },
+    {
+      "id": "case-4",
+      "schema_valid": false,
+      "account_id_exact": true,
+      "relevant_retrieved": 1,
+      "retrieved_count": 1,
+      "relevant_count": 1,
+      "human_faithful": false,
+      "judge_faithful": false,
+      "judge_agrees": true
+    }
+  ],
+  "note": "Synthetic responses and illustrative labels; no model or judge was run.",
+  "quality_gate": {
+    "thresholds": {},
+    "checks": {},
+    "passed": null
+  }
+}
