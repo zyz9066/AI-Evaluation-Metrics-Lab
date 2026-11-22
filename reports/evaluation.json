@@ -1,0 +1,36 @@
+{
+  "task": "binary_classification",
+  "model_id": "provided_predictions",
+  "dataset_id": "validation_predictions.csv",
+  "created_at_utc": "2026-11-21T00:48:05.170196+00:00",
+  "threshold": 0.5,
+  "sample_count": 20,
+  "metrics": {
+    "confusion_matrix": {
+      "tp": 5,
+      "fp": 3,
+      "tn": 9,
+      "fn": 3
+    },
+    "accuracy": 0.7,
+    "precision": 0.625,
+    "recall": 0.625,
+    "f1": 0.625,
+    "specificity": 0.75,
+    "roc_auc": 0.7916666666666667,
+    "average_precision": 0.7447916666666666,
+    "brier_score": 0.18270999999999998
+  },
+  "quality_gate": {
+    "thresholds": {
+      "min_recall": 0.6,
+      "max_brier": 0.2
+    },
+    "checks": {
+      "min_recall": true,
+      "max_brier": true
+    },
+    "passed": true
+  },
+  "note": "Demonstration data only; select thresholds on validation data."
+}

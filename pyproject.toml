@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-evaluation-metrics-lab"
+version = "0.1.0"
+description = "A reproducible lab for classification and synthetic GenAI evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+tracking = ["mlflow>=3.0"]
+
+[project.scripts]
+eval-lab = "eval_lab.cli:main"
+eval-lab-rag = "eval_lab.rag:main"
+eval-lab-log-mlflow = "eval_lab.track_mlflow:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
